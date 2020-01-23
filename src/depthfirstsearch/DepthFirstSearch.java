@@ -28,7 +28,9 @@ public class DepthFirstSearch {
             Integer pop = stack.pop();
             Optional<Integer> next = findUnvisitedNode(pop);
             if(next.isPresent()){
+                // the current node is not explored yet, put it back
                 stack.push(pop);
+                // go and track the new one
                 visit(next.get());
             }
         }
